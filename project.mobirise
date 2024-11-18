@@ -8222,9 +8222,9 @@
           "_styles": {},
           "_name": "image04",
           "_sourceTheme": "startm5",
-          "_customHTML": "<section data-bs-version=\"5.1\" class=\"bsky-embed bsky-background\" group=\"embed\">\n    <script src=\"https://cdn.jsdelivr.net/npm/bsky-embed@0.0.5/dist/bsky-embed.es.js\" async></script>\n    <bsky-embed  \n        username=\"booo3.bsky.social\"  \n        limit=\"10\">  \n    </bsky-embed>\n</section>\n\n<style>\n.bsky-background {\n  background-color: #edefeb;\n  width: 100vw;         /* Full viewport width */\n  min-height: 100px;    /* Set a minimum height */\n  padding: 40px 0;      /* Add padding */\n  margin: 0;            /* Remove margins */\n  box-sizing: border-box; /* Ensure padding is included in the dimensions */\n}\n</style>\n",
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"bsky-embed bsky-background\" group=\"embed\">\n    [JS_CODE_0]\n    <bsky-embed  \n        username=\"booo3.bsky.social\"  \n        limit=\"10\"\n        >\n    </bsky-embed>\n</section>\n\n<style>\n.bsky-background {\n  background-color: #edefeb;\n  width: 100vw;         /* Full viewport width */\n  min-height: 100px;    /* Set a minimum height */\n  padding: 40px 0;      /* Add padding */\n  margin: 0;            /* Remove margins */\n  box-sizing: border-box; /* Ensure padding is included in the dimensions */\n}\n</style>\n",
           "_JSplaceholders": [
-            "<script src=\"https://cdn.jsdelivr.net/npm/bsky-embed@0.0.5/dist/bsky-embed.es.js\" async></script>"
+            "<script src=\"https://cdn.jsdelivr.net/npm/bsky-embed/dist/bsky-embed.es.js\" async></script>"
           ],
           "_PHPplaceholders": [],
           "_anchor": "image04-3s",
