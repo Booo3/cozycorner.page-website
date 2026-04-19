@@ -1,0 +1,54 @@
+.hero-section {
+    position: relative;
+    height: 30vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    perspective: 1200px;
+    -webkit-mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
+    mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+    width: 80%;
+    color: white;
+}
+
+.main-boxes-wrapper {
+    position: absolute;
+    right: -10%;
+    top: -150%; 
+    bottom: -150%;
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+}
+
+.main-boxes {
+    display: flex;
+    gap: 20px;
+    opacity: 0.5;
+    transform: rotateX(14deg) rotateY(-15deg) rotateZ(10deg);
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    will-change: transform; /* Forces GPU rendering for smoothness */
+}
+
+.box {
+    width: 250px;
+    height: 380px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    flex-shrink: 0;
+}

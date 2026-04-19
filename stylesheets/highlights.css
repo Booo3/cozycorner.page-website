@@ -1,0 +1,104 @@
+.highlights {
+  position: relative;
+  width: 100%;
+  margin: 2rem 0;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px #0000004d;
+  background: var(--md-default-bg-color--light);
+}
+
+.highlights-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+}
+
+.highlights-slide {
+  position: relative;
+  min-width: 100%;
+  box-sizing: border-box;
+}
+
+
+.highlights-slide::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom, 
+        #00000000 0%,
+        #00000000 40%, 
+        #000000 100%
+    );
+    z-index: 1; /* Places gradient above the image but below text */
+}
+
+.highlights-slide img {
+  display: block;
+  width: 100%;
+  height: 40vh;
+  object-fit: cover;
+}
+
+.highlights-caption {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  justify-content: space-between;
+  position: relative;
+  height: max-content;
+  padding: 2rem 5rem;
+  border-radius: 6px;
+  max-width: 100%;
+  border-radius: 0px;
+  border-top: 5px solid var(--button-white);
+  z-index: 2;
+}
+
+.highlights-caption h1 {
+  color: #ffffff;
+}
+
+.highlights-caption p {
+  color: #ffffff;
+}
+
+.highlights-button {
+  position: absolute;
+  top: 80%;
+  color: var(--md-primary-fg-color);
+  font-size: 2.5rem;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 10;
+  width: auto;
+  height: auto;
+}
+
+.highlights-button:hover {
+  color:var(--md-primary-bg-color);
+  opacity:.8
+}
+
+.highlights-button.prev {
+  left: 20px;
+}
+
+.highlights-button.next {
+  right: 20px;
+}
+
+.md-typeset .md-button--highlights {
+  align-self: flex-end; /* Pushes only the button to the right */
+  background-color:var(--md-primary-fg-color);
+  color:var(--md-primary-bg-color)
+}
+.md-typeset .md-button--highlights:focus,
+.md-typeset .md-button--highlights:hover {
+  color:var(--md-primary-bg-color);
+  opacity:.8
+}

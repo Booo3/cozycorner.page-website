@@ -1,0 +1,100 @@
+/* HERO SECTION */
+.hero-section {
+    position: relative;
+    height: 30vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    perspective: 1200px;
+    -webkit-mask-image: none;
+    mask-image: none;
+    border-radius:var(--radius-main);
+    box-shadow:var(--shadow-outside);
+}
+
+/* BACKGROUND LAYER (very back) */
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: url('/assets/images/mods/red-money/red-background.webp') center/cover no-repeat;
+    filter: brightness(0.4);
+}
+
+/* LOGO */
+.hero-content {
+    position: relative;
+    z-index: 20;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    width: 100%;
+    padding-left: 10px;
+}
+
+.hero-logo {
+    max-width: 800px;
+    width: 80%;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 10px 30px rgba(0,0,0,0.6));
+}
+
+/* BOXES WRAPPER */
+.main-boxes-wrapper {
+    position: absolute;
+    right: -10%;
+    top: -150%;
+    bottom: -150%;
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+
+    z-index: 5; /* above bg, below logo */
+}
+
+/* BOX GRID */
+.main-boxes {
+    display: flex;
+    gap: 20px;
+    opacity: 0.5;
+    transform: rotateX(14deg) rotateY(-15deg) rotateZ(10deg);
+}
+
+/* COLUMN */
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    will-change: transform;
+}
+
+/* BOX */
+.box {
+    width: 250px;
+    height: 380px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    flex-shrink: 0;
+}
+
+/* MOBILE */
+@media (max-width: 680px) {
+    .hero-section {
+        height: 10vh;
+    }
+    .main-boxes {
+        transform: 
+            scale(0.5)
+            rotateX(14deg) 
+            rotateY(-15deg) 
+            rotateZ(10deg);
+    }
+}

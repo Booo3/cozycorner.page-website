@@ -1,0 +1,64 @@
+@font-face {
+  font-family: 'coolvetica';
+  src: url('/stylesheets/fonts/coolvetica.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  padding-top: 30px;
+  background-color:var(--md-default-bg-color);
+}
+
+.md-typeset .admonition.download-box {
+    border-radius:var(--radius-main);
+    border: none;
+}
+
+/* Style all links in the main content area */
+.md-content a {
+    color:var(--md-accent-fg-color);
+    text-decoration: none;
+}
+
+/* Style the hover state */
+.md-content a:hover {
+    text-decoration: underline;
+    opacity: 0.9;
+}
+
+.md-content a[href^="http"]::after {
+    content: " ↗";
+    font-size: 0.8em;
+}
+
+/* Create hidden bookmarks */
+.md-typeset h2.bookmark,
+.md-typeset h3.bookmark,
+.md-typeset h4.bookmark,
+.md-typeset h5.bookmark,
+.md-typeset h6.bookmark{
+    visibility: hidden !important;
+    position: absolute !important; /* Removes it from the normal document flow */
+    margin: 0 !important;
+    padding: 0 !important;
+    height: 0 !important;
+    width: 0 !important;
+    overflow: hidden !important;
+    pointer-events: none !important;
+}
+
+/* Set custom font for big text */
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4,
+.md-typeset h5,
+.md-typeset h6 {
+  font-family: 'coolvetica', sans-serif;
+}
+
+.md-typeset .admonition-title:before,
+.md-typeset summary:before {
+  background-color:var(--md-accent-fg-color);
+}

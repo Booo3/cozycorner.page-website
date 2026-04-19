@@ -1,0 +1,406 @@
+/* General body styling */
+:root {
+  --button-white: #ffffff;
+  --button-text: #000000;
+  --button-white-hover: #203458;
+  --button-text-hover: #ffffff;
+  --button-border: #d8c7ff83;
+  --text-title: #fff;
+  --md-default-fg-color--light: #ffffff;
+  --md-default-bg-color:#ffffff;
+  --radius-main: 24px;
+  --radius-small: 6px;
+  --shadow-inside: inset -5px 5px 15px #00000064, inset 5px -5px 15px #00000026;
+  --shadow-outside: 0 4px 10px #0000004d;
+}
+
+/* overwrite default css */
+
+.md-typeset h1 {
+  color:var(--text-title);
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.md-content__inner {
+  margin:0 .8rem 0rem; /* remove padding on the bottom */
+}
+
+.md-typeset a {
+  color:var(--button-text);
+}
+
+.md-typeset a:hover {
+  color:var(--button-text-hover);
+}
+
+/* Existing Desktop Styles (Updated for new HTML structure) */
+.custom-navbar {
+  position: fixed;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0rem; 
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  padding: .8rem .8rem;
+  border-radius: 24px;
+  max-width: 90%;
+  width: max-content;
+  z-index: 1000;
+  flex-wrap: nowrap;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Ensure brand doesn't wrap */
+.nav-brand {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.nav-brand img {
+  height: 35px;
+  width: 35px;
+  margin-right: 0.75rem;
+  border-radius: 6px;
+}
+
+.nav-brand span {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+/* Wrapper for links and buttons */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 3rem; /* Spacing between links and contact button */
+}
+
+/* Links */
+.nav-links {
+  display: flex;
+  list-style: none;
+  padding: 0rem 1rem;
+}
+
+.nav-links li a {
+  color: #d1d5db;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0.4rem 0.75rem;
+  transition: all 0.3s ease;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+
+.nav-links li a:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+/* Buttons */
+.nav-buttons .btn {
+  background-color: #fff;
+  color: #1a1b26;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.4rem 1.25rem;
+  border-radius: 24px;
+  transition: opacity 0.3s ease;
+  white-space: nowrap;
+}
+
+.nav-buttons .btn + .btn {
+  margin-left: 1rem; 
+}
+
+.nav-buttons .btn:hover {
+  background-color:var(--md-primary-fg-color);
+  color: #fff;
+  opacity: 0.8;
+}
+
+
+/* Hamburger - Hidden on Desktop */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 2px;
+  background: #fff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+
+/* --- DROPDOWN PARENT --- */
+.nav-links .dropdown {
+  position: relative; /* Critical: anchors the absolute dropdown menu to this item */
+}
+
+/* Optional: Small down arrow styling */
+.nav-links .dropdown-toggle .arrow {
+  font-size: 0.8em;
+  margin-left: 0.2rem;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+/* --- DROPDOWN MENU --- */
+.dropdown-menu {
+  position: absolute;
+  top: 100%; /* Pushes it directly beneath the "Games" link */
+  left: 50%;
+  transform: translateX(-50%); /* Centers the menu exactly under the parent link */
+  
+  /* Styling to match your screenshot */
+  background: #1d1d26;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+
+  border-radius: 0.75rem;
+  padding: 0.5rem 0;
+  margin-top: 0.5rem; /* Small gap between navbar and menu */
+  min-width: max-content;
+  list-style: none;
+  box-shadow:var(--shadow-outside);
+  
+  /* Hide it by default smoothly */
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 1001; /* Keep it above other content */
+}
+
+/* --- SHOW MENU ON HOVER --- */
+.nav-links .dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* --- DROPDOWN LINKS STYLING --- */
+.dropdown-menu li a {
+  color: #d1d5db; /* Dark text for readability on the light background */
+  display: block;
+  padding: 0.5rem 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border-radius: 0; /* Override the pill shape from the main nav */
+  transition: background 0.2s ease;
+}
+
+.dropdown-menu li a:hover {
+  background: rgba(203, 196, 255, 0.05); /* Slight darkening on hover */
+  color: #d0d3f1;
+}
+
+/* --- MOBILE STYLES --- */
+@media (max-width: 65.625em) {
+  .custom-navbar {
+    width: 90%; /* Allow it to span most of the screen */
+    flex-wrap: wrap;
+  }
+
+  /* Active mobile state (Open Menu) */
+  .custom-navbar.menu-open {
+    border-radius: 1rem; /* Switches to the rounded rectangle */
+    padding: 1rem 1.5rem; /* Adds the extra padding for the dropdown */
+  }
+
+  .nav-brand span {
+    font-size: 1.00rem;
+    font-weight: 700;
+    color: #fff;
+  }
+
+  .hamburger {
+    display: flex; /* Show the icon */
+  }
+
+  .nav-menu {
+    display: none; /* Hide the menu by default */
+    flex-direction: column;
+    width: 100%;
+    gap: 1.5rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Nice divider line */
+  }
+
+  /* This class is toggled by JavaScript */
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 1rem;
+  }
+
+  .nav-buttons {
+    width: 100%;
+    display: flex;
+    gap: 2rem; 
+    justify-content: center;
+  }
+
+  .dropdown-menu {
+    position: static; 
+    transform: none;
+    opacity: 1; 
+    visibility: visible;
+    
+    /* 1. STRIP THE DESKTOP BOX STYLES */
+    background: transparent;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    border: none;
+    box-shadow: none;
+    
+    /* 2. REMOVE CONTAINER PADDING */
+    padding: 0; 
+    margin-top: 0.5rem;
+    width: 100%; /* Ensures it fills the mobile menu width */
+  }
+
+  .dropdown-menu li a {
+    color: #d1d5db; 
+    
+    /* 3. MOVE INDENT TO THE LINK ITSELF */
+    /* top right bottom left (3rem pushes the text inward, but the background stays full width) */
+    padding: 0.5rem 1.5rem 0.5rem 3rem; 
+    
+    /* Optional: give it the same rounded corners as your other mobile links */
+    border-radius: 6px;
+  }
+}
+
+.btn {
+  text-decoration: none;
+  color: var(--button-text);
+  font-weight: 500;
+  border: 1px solid var(--button-white);
+  background: var(--button-white);
+  padding: 0.3rem 1rem;
+  border-radius: 9999px;
+  transition: background 0.3s, border 0.3s;
+}
+
+.btn:hover {
+  color: var(--button-text-hover);
+  background: var(--button-white-hover);
+  border-color: var(--button-border);
+}
+
+/* Contact Section */
+.contact-section {
+  background-color: var(--md-footer-bg-color);
+  color: var(--md-footer-fg-color);
+  width: 100vw;                     /* Full width */
+  position: relative;
+  left: 50%;
+  margin-left: -50vw;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.contact-section h2 {
+  margin-bottom: 0.5rem;
+  color: var(--md-footer-fg-color--light, #fff);
+}
+
+.contact-section p {
+  margin: 0.4rem 0;
+  font-size: 1rem;
+  color: var(--md-footer-fg-color--lighter, #ccc);
+}
+
+.contact-section a {
+  color: var(--md-footer-fg-color--light, #fff);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contact-section a:hover {
+  text-decoration: underline;
+}
+
+/* Remove ugly navbar */
+.md-footer__inner {
+  display: none;
+}
+
+.md-main__inner {
+  margin-top: 3.5rem
+}
+
+.video-container {
+  position: relative;
+  border-radius: 24px;
+  padding-bottom: 54%; /* 16:9 Aspect Ratio */
+  height: 0;
+  overflow: hidden;
+  box-shadow:var(--shadow-outside);
+  max-width: 95%; 
+  
+  margin: 5% auto; 
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.llm-only {
+  position: absolute !important;
+  left: -10000px !important;
+  top: auto !important;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  color: transparent !important;
+}
+
+/* The wrapper handles the sizing, corners, and shadow */
+.blueprint-mask {
+  display: block;
+  width: 100%;
+  height: 450px;
+  border-radius: 12px;
+  overflow: hidden; /* This is what chops off the iframe's edges */
+  box-shadow:var(--shadow-outside);
+}
+
+.ueblueprint {
+  display: block;
+  border: none;
+  max-width: none !important; 
+  width: calc(100% + 24px); 
+  height: calc(100% + 16px);
+  margin-top: -8px;
+  margin-left: -8px;
+}
