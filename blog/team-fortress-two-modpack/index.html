@@ -735,7 +735,7 @@
   <span class="md-ellipsis">
     
   
-  Fusion
+  Payday 3: Fusion
 
     
   </span>
@@ -1065,6 +1065,11 @@
 
   <h1 id="__skip">Team Fortress 2 Modpack</h1>
 
+<p><meta property="og:title" content="Team Fortress 2 Modpack" />
+<meta property="og:description" content="We all know how bad the TF2 default settings are, but what bothered me the most was that I always had to redo all my settings and mods. So I finally came up with a great way to manage mods!" />
+<meta property="og:image" content="https://boo.theonline.dev/assets/social/tf2.webp" />
+<meta property="og:url" content="https://boo.theonline.dev/blog/team-fortress-two-modpack" />
+<meta property="og:type" content="website" /></p>
 <style>
 @import url("/stylesheets/hero-logo.css");
 /* @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap'); */
@@ -1293,13 +1298,17 @@ Git is awesome when programming for version control. So i thought why not use it
 <p>To quickly switch loadouts, use <strong>F5</strong>, <strong>F6</strong>, <strong>F7</strong>, and <strong>F8</strong> to select <strong>Loadouts 1–4</strong>.</p>
 <h3 id="viewmodel-toggle">Viewmodel toggle</h3>
 <p>You can hide viewmodels that are marked to be hidden via the <strong><code>T</code></strong> button. In the <strong><code>scout.cfg</code></strong> you can see which weapons are marked to be hidden. If you press <strong><code>T</code></strong> again, it will disable the hidden viewmodel script.</p>
-<div class="highlight"><span class="filename">Example: scout.cfg</span><pre><span></span><code><span class="na">//scout settings</span>
-<span class="na">//Made with cfg.tf - custom Team Fortress 2 config generator</span>
-<span class="na">exec binds</span>
-<span class="na">bind &quot;1&quot; &quot;slot1;viewmoddelstate&quot;</span>
-<span class="na">bind &quot;2&quot; &quot;slot2;viewmoddelstate&quot;</span>
-<span class="na">bind &quot;3&quot; &quot;slot3;viewmoddelstate_flipped&quot;</span>
-</code></pre></div>
+<div id="scout-cfg">Loading config...</div>
+
+<script>
+fetch("https://git.theonline.dev/boo3/TF2-Config/raw/branch/main/configs/cfg/scout.cfg")
+  .then(r => r.text())
+  .then(text => {
+    document.getElementById("scout-cfg").innerHTML =
+      `<pre><code class="language-cfg">${text}</code></pre>`;
+  });
+</script>
+
 <h3 id="engineer-binds">Engineer Binds</h3>
 <p>When playing Engineer, a lot of time is spent babysitting your buildings, so I want to avoid needless menuing. I’ve set up:</p>
 <ul>
