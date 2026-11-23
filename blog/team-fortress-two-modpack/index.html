@@ -1265,7 +1265,11 @@ Git is awesome when programming for version control. So i thought why not use it
     <div class="screen"><img src="/assets/images/tf2/tf2-010.webp" alt=""></div>
 
     <div class="thumbnail-carousel">
-        <button class="carousel__btn prev">‹</button>
+        <button class="carousel__btn prev" aria-label="Previous image">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M15 18l-6-6 6-6" />
+            </svg>
+        </button>
         <ul class="carousel__slider">
             <li class="carousel__slide active" data-type="image" data-src="/assets/images/tf2/tf2-010.webp">
     <div class="thumbnail">
@@ -1309,7 +1313,11 @@ Git is awesome when programming for version control. So i thought why not use it
     </div>
 </li>
         </ul>
-        <button class="carousel__btn next">›</button>
+        <button class="carousel__btn next" aria-label="Next image">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M9 18l6-6-6-6" />
+            </svg>
+        </button>
     </div>
 </div>
 

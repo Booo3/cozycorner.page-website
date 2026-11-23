@@ -78,7 +78,15 @@
   width: auto;
   height: auto;
 }
-
+.highlights-button svg {
+    width: 35px;
+    height: 35px;
+    fill: none;
+    stroke: var(--md-primary-fg-color);
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
 .highlights-button:hover {
   color:var(--md-primary-bg-color);
   opacity:.8

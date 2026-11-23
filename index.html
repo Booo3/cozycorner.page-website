@@ -810,8 +810,17 @@ Throughout your response, never just drop a bare URL. Use descriptive, inviting 
       </div>
     </div>
   </div>
-  <button class="highlights-button prev">‹</button>
-  <button class="highlights-button next">›</button>
+  <button class="highlights-button prev" aria-label="Previous">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M15 18l-6-6 6-6" />
+      </svg>
+  </button>
+
+  <button class="highlights-button next" aria-label="Next">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M9 18l6-6-6-6" />
+      </svg>
+  </button>
 </div>
 
 <h1 id="blog-posts">Blog Posts</h1>
